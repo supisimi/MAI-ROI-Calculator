@@ -1,0 +1,17 @@
+# OS
+Thumbs.db
+Desktop.ini
+*.log
+
+# VS Code
+.vscode/
+
+# Node
+node_modules/
+dist/
+
+# Mac
+.DS_Store
+
+# Temp
+*.tmp
