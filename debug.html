@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Debug Products Table</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Debug Products Table</h1>
+    
+    <div class="table-container">
+      <table id="productsTable">
+        <thead>
+          <tr>
+            <th style="width: 40px;"></th>
+            <th>Name</th>
+            <th>List Price</th>
+            <th>Quantity</th>
+            <th>Discounted Cost</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Will be populated by JS -->
+        </tbody>
+      </table>
+    </div>
+    
+    <div id="log"></div>
+  </div>
+  
+  <script>
+    // Simple test without loading app.js
+    const testProducts = [
+      { id: 'p1', name: 'MAI', listPrice: 1749, quantity: 1, selected: true },
+      { id: 'p2', name: 'Test Product', listPrice: 100, quantity: 2, selected: true }
+    ];
+    
+    const discount = 40;
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const tbody = document.getElementById('productsTable').querySelector('tbody');
+      const log = document.getElementById('log');
+      
+      log.innerHTML = '<h2>Debug Info:</h2>';
+      log.innerHTML += `<p>tbody element: ${tbody ? 'Found' : 'NOT FOUND'}</p>`;
+      log.innerHTML += `<p>Products count: ${testProducts.length}</p>`;
+      
+      if (!tbody) {
+        log.innerHTML += '<p style="color: red;">ERROR: tbody not found!</p>';
+        return;
+      }
+      
+      try {
+        const html = testProducts.map(p => {
+          const discountedPrice = p.listPrice * (1 - discount / 100);
+          const discountedCost = discountedPrice * p.quantity;
+          
+          return `
+            <tr>
+              <td style="text-align: center;">
+                <input type="checkbox" ${p.selected ? 'checked' : ''} />
+              </td>
+              <td>${p.name}</td>
+              <td>${p.listPrice}</td>
+              <td>${p.quantity}</td>
+              <td>${discountedCost.toFixed(2)}</td>
+              <td><button>Delete</button></td>
+            </tr>
+          `;
+        }).join('');
+        
+        log.innerHTML += `<p>Generated HTML length: ${html.length}</p>`;
+        log.innerHTML += `<h3>Generated HTML:</h3><pre>${html.substring(0, 200)}...</pre>`;
+        
+        tbody.innerHTML = html;
+        log.innerHTML += '<p style="color: green;">SUCCESS: Table updated!</p>';
+      } catch (e) {
+        log.innerHTML += `<p style="color: red;">ERROR: ${e.message}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>
