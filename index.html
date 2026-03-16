@@ -85,19 +85,19 @@
           <div class="form-field derived">
             <label for="laborCostPerSecond">Labor Cost/Second</label>
             <input type="number" id="laborCostPerSecond" readonly />
-            <span class="unit currency-symbol">/sec</span>
+            <span class="unit currency-symbol">€ per second</span>
             <small class="derived-note">Labor Cost/Hour ÷ 3600</small>
           </div>
           <div class="form-field derived">
             <label for="laborCostPerMonthPerWS">Labor Cost/Month (per WS)</label>
             <input type="number" id="laborCostPerMonthPerWS" readonly />
-            <span class="unit currency-symbol">/month</span>
+            <span class="unit currency-symbol">€ per month</span>
             <small class="derived-note">Labor Cost/Hour × Hours/Shift × Shifts/Day × Workdays/Month</small>
           </div>
           <div class="form-field derived">
             <label for="laborCostPerMonthTotal">Labor Cost/Month (Total)</label>
             <input type="number" id="laborCostPerMonthTotal" readonly />
-            <span class="unit currency-symbol">/month</span>
+            <span class="unit currency-symbol">€ per month</span>
             <small class="derived-note">Labor Cost/Month (per WS) × Workstations</small>
           </div>
         </div>
@@ -113,34 +113,39 @@
             <strong>Scanning</strong>
             <span class="info-icon" data-tooltip="With wearable scanning, workers gain efficiency from a more ergonomic workflow. The back-of-hand companion with multi-range scan engine eliminates the need to pick up, aim, and return a handheld device. Each scan is completed seamlessly in the flow of work, typically saving 2–6 seconds per scan.">i</span>
           </summary>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="quantityScansPerShift">Scans/Shift</label>
-              <input type="number" id="quantityScansPerShift" min="0" step="1" />
-              <span class="unit">scans</span>
-            </div>
-            <div class="form-field derived">
-              <label for="scansPerMinute">Scans/Minute</label>
-              <input type="number" id="scansPerMinute" readonly />
-              <span class="unit">scans/min</span>
-              <small class="derived-note">Calculated: Scans/Shift ÷ Minutes/Shift</small>
-            </div>
-            <div class="form-field-row">
+          <div class="feature-content">
+            <div class="form-grid">
               <div class="form-field">
-                <label for="timePerScanBefore">Time/Scan Before MAI</label>
-                <input type="number" id="timePerScanBefore" min="0" step="0.1" />
-                <span class="unit">seconds</span>
-              </div>
-              <div class="form-field">
-                <label for="timePerScanWith">Time/Scan With MAI</label>
-                <input type="number" id="timePerScanWith" min="0" step="0.1" />
-                <span class="unit">seconds</span>
+                <label for="quantityScansPerShift">Scans/Shift</label>
+                <input type="number" id="quantityScansPerShift" min="0" step="1" />
+                <span class="unit">scans</span>
               </div>
               <div class="form-field derived">
-                <label for="scanningTimeSavings">Time Savings</label>
-                <input type="number" id="scanningTimeSavings" readonly />
-                <span class="unit">seconds</span>
+                <label for="scansPerMinute">Scans/Minute</label>
+                <input type="number" id="scansPerMinute" readonly />
+                <span class="unit">scans/min</span>
+                <small class="derived-note">Calculated: Scans/Shift ÷ Minutes/Shift</small>
               </div>
+              <div class="form-field-row">
+                <div class="form-field">
+                  <label for="timePerScanBefore">Time/Scan Before MAI</label>
+                  <input type="number" id="timePerScanBefore" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field">
+                  <label for="timePerScanWith">Time/Scan With MAI</label>
+                  <input type="number" id="timePerScanWith" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field derived">
+                  <label for="scanningTimeSavings">Time Savings</label>
+                  <input type="number" id="scanningTimeSavings" readonly />
+                  <span class="unit">seconds</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-wrapper" data-tooltip="With wearable scanning, workers gain efficiency from a more ergonomic workflow. The back-of-hand companion with multi-range scan engine eliminates the need to pick up, aim, and return a handheld device. Each scan is completed seamlessly in the flow of work, typically saving 2–6 seconds per scan.">
+              <img src="ROI Calculator Images/scanning.png" alt="Scanning visualization" class="feature-image">
             </div>
           </div>
         </details>
@@ -151,34 +156,39 @@
             <strong>Worker Guidance</strong>
             <span class="info-icon" data-tooltip="A wearable companion with a display delivers the right information at the right moment - directly on the back of the hand and always in view. This removes the need to turn toward or walk to any other display. Typical time savings are 1–5 seconds per information step.">i</span>
           </summary>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="workerGuidanceQuantityPerShift">Qty/Shift</label>
-              <input type="number" id="workerGuidanceQuantityPerShift" min="0" step="1" />
-              <span class="unit">actions</span>
-            </div>
-            <div class="form-field derived">
-              <label for="workerGuidancePerScanRatio">Per Scan Ratio</label>
-              <input type="number" id="workerGuidancePerScanRatio" readonly />
-              <span class="unit">ratio</span>
-              <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
-            </div>
-            <div class="form-field-row">
+          <div class="feature-content">
+            <div class="form-grid">
               <div class="form-field">
-                <label for="workerGuidanceTimeWithout">Time Without MAI</label>
-                <input type="number" id="workerGuidanceTimeWithout" min="0" step="0.1" />
-                <span class="unit">seconds</span>
-              </div>
-              <div class="form-field">
-                <label for="workerGuidanceTimeWith">Time With MAI</label>
-                <input type="number" id="workerGuidanceTimeWith" min="0" step="0.1" />
-                <span class="unit">seconds</span>
+                <label for="workerGuidanceQuantityPerShift">Qty/Shift</label>
+                <input type="number" id="workerGuidanceQuantityPerShift" min="0" step="1" />
+                <span class="unit">actions</span>
               </div>
               <div class="form-field derived">
-                <label for="workerGuidanceTimeSavings">Time Savings</label>
-                <input type="number" id="workerGuidanceTimeSavings" readonly />
-                <span class="unit">seconds</span>
+                <label for="workerGuidancePerScanRatio">Per Scan Ratio</label>
+                <input type="number" id="workerGuidancePerScanRatio" readonly />
+                <span class="unit">ratio</span>
+                <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
               </div>
+              <div class="form-field-row">
+                <div class="form-field">
+                  <label for="workerGuidanceTimeWithout">Time Without MAI</label>
+                  <input type="number" id="workerGuidanceTimeWithout" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field">
+                  <label for="workerGuidanceTimeWith">Time With MAI</label>
+                  <input type="number" id="workerGuidanceTimeWith" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field derived">
+                  <label for="workerGuidanceTimeSavings">Time Savings</label>
+                  <input type="number" id="workerGuidanceTimeSavings" readonly />
+                  <span class="unit">seconds</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-wrapper" data-tooltip="A wearable companion with a display delivers the right information at the right moment - directly on the back of the hand and always in view. This removes the need to turn toward or walk to any other display. Typical time savings are 1–5 seconds per information step.">
+              <img src="ROI Calculator Images/guidance 1.png" alt="Worker Guidance visualization" class="feature-image">
             </div>
           </div>
         </details>
@@ -189,34 +199,39 @@
             <strong>Information Lookup</strong>
             <span class="info-icon" data-tooltip="When additional details are needed (e.g., brand, batch number, product image), workers can access them instantly with one click on the wearable companion display. This eliminates trips to terminals or handheld devices outside immediate reach. Savings of 5–10 seconds per lookup are common.">i</span>
           </summary>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="informationLookupQuantityPerShift">Qty/Shift</label>
-              <input type="number" id="informationLookupQuantityPerShift" min="0" step="1" />
-              <span class="unit">actions</span>
-            </div>
-            <div class="form-field derived">
-              <label for="informationLookupPerScanRatio">Per Scan Ratio</label>
-              <input type="number" id="informationLookupPerScanRatio" readonly />
-              <span class="unit">ratio</span>
-              <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
-            </div>
-            <div class="form-field-row">
+          <div class="feature-content">
+            <div class="form-grid">
               <div class="form-field">
-                <label for="informationLookupTimeWithout">Time Without MAI</label>
-                <input type="number" id="informationLookupTimeWithout" min="0" step="0.1" />
-                <span class="unit">seconds</span>
-              </div>
-              <div class="form-field">
-                <label for="informationLookupTimeWith">Time With MAI</label>
-                <input type="number" id="informationLookupTimeWith" min="0" step="0.1" />
-                <span class="unit">seconds</span>
+                <label for="informationLookupQuantityPerShift">Qty/Shift</label>
+                <input type="number" id="informationLookupQuantityPerShift" min="0" step="1" />
+                <span class="unit">actions</span>
               </div>
               <div class="form-field derived">
-                <label for="informationLookupTimeSavings">Time Savings</label>
-                <input type="number" id="informationLookupTimeSavings" readonly />
-                <span class="unit">seconds</span>
+                <label for="informationLookupPerScanRatio">Per Scan Ratio</label>
+                <input type="number" id="informationLookupPerScanRatio" readonly />
+                <span class="unit">ratio</span>
+                <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
               </div>
+              <div class="form-field-row">
+                <div class="form-field">
+                  <label for="informationLookupTimeWithout">Time Without MAI</label>
+                  <input type="number" id="informationLookupTimeWithout" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field">
+                  <label for="informationLookupTimeWith">Time With MAI</label>
+                  <input type="number" id="informationLookupTimeWith" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field derived">
+                  <label for="informationLookupTimeSavings">Time Savings</label>
+                  <input type="number" id="informationLookupTimeSavings" readonly />
+                  <span class="unit">seconds</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-wrapper" data-tooltip="When additional details are needed (e.g., brand, batch number, product image), workers can access them instantly with one click on the wearable companion display. This eliminates trips to terminals or handheld devices outside immediate reach. Savings of 5–10 seconds per lookup are common.">
+              <img src="ROI Calculator Images/guidance 2.png" alt="Information Lookup visualization" class="feature-image">
             </div>
           </div>
         </details>
@@ -227,34 +242,39 @@
             <strong>Simple Input</strong>
             <span class="info-icon" data-tooltip="Simple inputs - like confirming, declining, or selecting from a few options - are completed directly on the wearable companion via touch display, physical buttons or double-trigger. No reaching for other devices is required, reducing interaction time. Typical savings are 3–7 seconds per simple input.">i</span>
           </summary>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="simpleInputQuantityPerShift">Qty/Shift</label>
-              <input type="number" id="simpleInputQuantityPerShift" min="0" step="1" />
-              <span class="unit">actions</span>
-            </div>
-            <div class="form-field derived">
-              <label for="simpleInputPerScanRatio">Per Scan Ratio</label>
-              <input type="number" id="simpleInputPerScanRatio" readonly />
-              <span class="unit">ratio</span>
-              <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
-            </div>
-            <div class="form-field-row">
+          <div class="feature-content">
+            <div class="form-grid">
               <div class="form-field">
-                <label for="simpleInputTimeWithout">Time Without MAI</label>
-                <input type="number" id="simpleInputTimeWithout" min="0" step="0.1" />
-                <span class="unit">seconds</span>
-              </div>
-              <div class="form-field">
-                <label for="simpleInputTimeWith">Time With MAI</label>
-                <input type="number" id="simpleInputTimeWith" min="0" step="0.1" />
-                <span class="unit">seconds</span>
+                <label for="simpleInputQuantityPerShift">Qty/Shift</label>
+                <input type="number" id="simpleInputQuantityPerShift" min="0" step="1" />
+                <span class="unit">actions</span>
               </div>
               <div class="form-field derived">
-                <label for="simpleInputTimeSavings">Time Savings</label>
-                <input type="number" id="simpleInputTimeSavings" readonly />
-                <span class="unit">seconds</span>
+                <label for="simpleInputPerScanRatio">Per Scan Ratio</label>
+                <input type="number" id="simpleInputPerScanRatio" readonly />
+                <span class="unit">ratio</span>
+                <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
               </div>
+              <div class="form-field-row">
+                <div class="form-field">
+                  <label for="simpleInputTimeWithout">Time Without MAI</label>
+                  <input type="number" id="simpleInputTimeWithout" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field">
+                  <label for="simpleInputTimeWith">Time With MAI</label>
+                  <input type="number" id="simpleInputTimeWith" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field derived">
+                  <label for="simpleInputTimeSavings">Time Savings</label>
+                  <input type="number" id="simpleInputTimeSavings" readonly />
+                  <span class="unit">seconds</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-wrapper" data-tooltip="Simple inputs - like confirming, declining, or selecting from a few options - are completed directly on the wearable companion via touch display, physical buttons or double-trigger. No reaching for other devices is required, reducing interaction time. Typical savings are 3–7 seconds per simple input.">
+              <img src="ROI Calculator Images/easy input.png" alt="Simple Input visualization" class="feature-image">
             </div>
           </div>
         </details>
@@ -265,34 +285,39 @@
             <strong>Moderate Input</strong>
             <span class="info-icon" data-tooltip="Moderate inputs - such as entering quantities, corrections, or selecting from lists (e.g., exception handling or task selection) - are made efficient with the wearable companion's touch display and buttons. By keeping the process on-hand, workers save 4–10 seconds per moderate input.">i</span>
           </summary>
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="moderateInputQuantityPerShift">Qty/Shift</label>
-              <input type="number" id="moderateInputQuantityPerShift" min="0" step="1" />
-              <span class="unit">actions</span>
-            </div>
-            <div class="form-field derived">
-              <label for="moderateInputPerScanRatio">Per Scan Ratio</label>
-              <input type="number" id="moderateInputPerScanRatio" readonly />
-              <span class="unit">ratio</span>
-              <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
-            </div>
-            <div class="form-field-row">
+          <div class="feature-content">
+            <div class="form-grid">
               <div class="form-field">
-                <label for="moderateInputTimeWithout">Time Without MAI</label>
-                <input type="number" id="moderateInputTimeWithout" min="0" step="0.1" />
-                <span class="unit">seconds</span>
-              </div>
-              <div class="form-field">
-                <label for="moderateInputTimeWith">Time With MAI</label>
-                <input type="number" id="moderateInputTimeWith" min="0" step="0.1" />
-                <span class="unit">seconds</span>
+                <label for="moderateInputQuantityPerShift">Qty/Shift</label>
+                <input type="number" id="moderateInputQuantityPerShift" min="0" step="1" />
+                <span class="unit">actions</span>
               </div>
               <div class="form-field derived">
-                <label for="moderateInputTimeSavings">Time Savings</label>
-                <input type="number" id="moderateInputTimeSavings" readonly />
-                <span class="unit">seconds</span>
+                <label for="moderateInputPerScanRatio">Per Scan Ratio</label>
+                <input type="number" id="moderateInputPerScanRatio" readonly />
+                <span class="unit">ratio</span>
+                <small class="derived-note">Calculated: Qty/Shift ÷ Scans/Shift</small>
               </div>
+              <div class="form-field-row">
+                <div class="form-field">
+                  <label for="moderateInputTimeWithout">Time Without MAI</label>
+                  <input type="number" id="moderateInputTimeWithout" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field">
+                  <label for="moderateInputTimeWith">Time With MAI</label>
+                  <input type="number" id="moderateInputTimeWith" min="0" step="0.1" />
+                  <span class="unit">seconds</span>
+                </div>
+                <div class="form-field derived">
+                  <label for="moderateInputTimeSavings">Time Savings</label>
+                  <input type="number" id="moderateInputTimeSavings" readonly />
+                  <span class="unit">seconds</span>
+                </div>
+              </div>
+            </div>
+            <div class="image-wrapper" data-tooltip="Moderate inputs - such as entering quantities, corrections, or selecting from lists (e.g., exception handling or task selection) - are made efficient with the wearable companion's touch display and buttons. By keeping the process on-hand, workers save 4–10 seconds per moderate input.">
+              <img src="ROI Calculator Images/complex input.png" alt="Moderate Input visualization" class="feature-image">
             </div>
           </div>
         </details>
@@ -321,12 +346,12 @@
           <div class="form-field derived savings-highlight">
             <label for="costSavedPerMonth">Cost Saved/Month</label>
             <input type="number" id="costSavedPerMonth" readonly />
-            <span class="unit currency-symbol">/month</span>
+            <span class="unit currency-symbol">€ per month</span>
           </div>
           <div class="form-field derived savings-highlight">
             <label for="annualCostSavings">Annual Cost Savings</label>
             <input type="number" id="annualCostSavings" readonly />
-            <span class="unit currency-symbol">/year</span>
+            <span class="unit currency-symbol">€ per year</span>
           </div>
           <div class="form-field derived savings-highlight">
             <label for="hoursSavedPerYear">Hours Saved/Year</label>
@@ -342,7 +367,7 @@
         
         <h3>Integration Cost</h3>
         <div class="form-grid">
-          <div class="form-field">
+          <div class="form-field full-width">
             <label for="integrationFixedFeeOneTime">Integration One Time Cost</label>
             <input type="number" id="integrationFixedFeeOneTime" min="0" step="1" />
             <span class="unit currency-symbol"></span>
@@ -355,7 +380,7 @@
           <div class="form-field">
             <label for="integrationHourlyRate">Integration Hourly Rate</label>
             <input type="number" id="integrationHourlyRate" min="0" step="1" />
-            <span class="unit currency-symbol">/hour</span>
+            <span class="unit currency-symbol">€ per hour</span>
           </div>
         </div>
 
@@ -408,7 +433,7 @@
         <!-- Solution Setup Subtotals -->
         <div class="subsection-subtotal">
           <div class="form-field derived">
-            <label for="solutionSetupPerWS">Sum per Workstation</label>
+            <label for="solutionSetupPerWS">Sum per Workstation [€]</label>
             <input type="number" id="solutionSetupPerWS" readonly />
             <span class="unit currency-symbol"></span>
           </div>
@@ -416,7 +441,7 @@
         
         <div class="subsection-subtotal">
           <div class="form-field derived">
-            <label for="solutionSetupTotal">Sum all Workstations (<span id="workstationCount">0</span> WS)</label>
+            <label for="solutionSetupTotal">Sum all Workstations (<span id="workstationCount">0</span> WS) [€]</label>
             <input type="number" id="solutionSetupTotal" readonly />
             <span class="unit currency-symbol"></span>
           </div>
@@ -425,7 +450,7 @@
         <!-- Total Investment (Integration + Solution Setup) -->
         <div class="subsection-total">
           <div class="form-field derived">
-            <label for="totalInvestment">Total Investment</label>
+            <label for="totalInvestment">Total Investment [€]</label>
             <input type="number" id="totalInvestment" readonly />
             <span class="unit currency-symbol"></span>
           </div>

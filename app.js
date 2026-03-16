@@ -701,7 +701,7 @@ function renderProductsTable() {
         <td>
           <input type="number" 
                  value="${p.quantity}" 
-                 step="0.001"
+                 step="1"
                  onchange="updateProductField('${p.id}', 'quantity', parseFloat(this.value))" 
                  style="width: 80px; text-align: right; border: 1px solid #e0e0e0; padding: 0.25rem;" />
         </td>
